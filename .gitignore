@@ -1,0 +1,10 @@
+# Node dependencies
+backend/node_modules/
+node_modules/
+
+# SQLite database file
+backend/gymdb.sqlite
+
+# macOS junk
+.DS_Store
+__MACOSX/
