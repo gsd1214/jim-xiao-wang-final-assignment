@@ -21,7 +21,37 @@ const db = new sqlite3.Database(dbPath, (err) => {
     console.log('Connected to SQLite database at', dbPath);
   }
 });
+// ---------------------------------------------
+// Create members table if it doesn't exist yet
+// This runs once automatically when the server starts.
+// ---------------------------------------------
 
+const createTableSql = `
+  CREATE TABLE IF NOT EXISTS members (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT NOT NULL,
+    dob TEXT NOT NULL,
+    address TEXT NOT NULL,
+    state TEXT NOT NULL,
+    country TEXT NOT NULL,
+    phone TEXT NOT NULL,
+    emergency_contact TEXT NOT NULL,
+    medical_contact TEXT NOT NULL,
+    allergies TEXT,
+    medications TEXT,
+    injuries TEXT,
+    conditions TEXT,
+    other_info TEXT
+  )
+`;
+
+db.run(createTableSql, (err) => {
+  if (err) {
+    console.error('Error creating members table:', err.message);
+  } else {
+    console.log('Members table ready.');
+  }
+});
 // Basic middleware used by almost every small REST API.
 app.use(cors());         // allow the frontend (different port) to call this API
 app.use(express.json()); // parse JSON bodies sent from Axios on the frontend
