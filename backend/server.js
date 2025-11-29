@@ -130,6 +130,86 @@ app.get('/api/members', (req, res) => {
   });
 });
 
+// ---------------------------------------------
+// Update and Delete endpoints for members
+// Complete the basic CRUD functions.
+// ---------------------------------------------
+
+// Update an existing member by id
+app.put('/api/members/:id', (req, res) => {
+  const id = req.params.id;
+  const d = req.body;
+
+  const sql = `
+    UPDATE members
+    SET name = ?,
+        sex = ?,
+        age = ?,
+        dob = ?,
+        address = ?,
+        state = ?,
+        country = ?,
+        email = ?,
+        emergency_contact = ?,
+        emergency_phone = ?,
+        membership_type = ?,
+        medications = ?,
+        allergies = ?,
+        past_injuries = ?,
+        medical_conditions = ?,
+        medical_contact = ?,
+        medical_contact_phone = ?,
+        other_info = ?,
+        payment_type = ?
+    WHERE id = ?
+  `;
+
+  const params = [
+    d.name,
+    d.sex,
+    d.age,
+    d.dob,
+    d.address,
+    d.state,
+    d.country,
+    d.email,
+    d.emergency_contact,
+    d.emergency_phone,
+    d.membership_type,
+    d.medications,
+    d.allergies,
+    d.past_injuries,
+    d.medical_conditions,
+    d.medical_contact,
+    d.medical_contact_phone,
+    d.other_info,
+    d.payment_type,
+    id
+  ];
+
+  db.run(sql, params, function (err) {
+    if (err) {
+      console.error('Update error:', err.message);
+      return res.status(500).json({ error: 'Database update failed' });
+    }
+    res.json({ success: true, changes: this.changes });
+  });
+});
+
+// Delete a member by id
+app.delete('/api/members/:id', (req, res) => {
+  const id = req.params.id;
+
+  const sql = 'DELETE FROM members WHERE id = ?';
+
+  db.run(sql, [id], function (err) {
+    if (err) {
+      console.error('Delete error:', err.message);
+      return res.status(500).json({ error: 'Database delete failed' });
+    }
+    res.json({ success: true, changes: this.changes });
+  });
+});
 // In the next batch I will add the SQL to create the members table
 // and all the CRUD routes.
 
