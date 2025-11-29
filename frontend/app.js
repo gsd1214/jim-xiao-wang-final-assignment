@@ -332,7 +332,7 @@ isReasonablePhone(value) {
         <!-- Home view -->
         <div v-if="view === 'home'">
           <p>
-            This is a small full-stack assignment project that lets an admin
+            This project that lets an admin
             capture gym membership applications and manage them in a simple list.
           </p>
           <p>
