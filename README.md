@@ -2,7 +2,7 @@
 A web application built with Vue.js (frontend), Bootstrap (styling), Express.js (backend), and SQLite (database).
 
 ##  Overview
-This project is a full-stack gym membership management system created as part of the Final Assignment.  
+This assignment project is a gym membership management system created as part of the Final Assignment.  
 The application is dynamic, data-driven, fully validated, and demonstrates full CRUD capabilities.
 
 ##  Project folder Structure
@@ -36,7 +36,7 @@ Jim Xiao Wang Final Assignment/
 - As an admin, I can edit existing records  
 - As an admin, I can delete members  
 - As an admin, I can bulk-delete selected members  
-- As an admin, I receive validation messages for errors  
+- As an admin, I can receive validation messages for errors  
 
 ##  Running Locally
 
