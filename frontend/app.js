@@ -111,7 +111,7 @@ const app = Vue.createApp({
 
     // Slightly stricter validation for the main required fields.
 validateForm() {
-  // Trim a few key string fields so we don't accept just spaces.
+
   const name = (this.form.name || '').trim();
   const email = (this.form.email || '').trim();
   const membership = (this.form.membership_type || '').trim();
@@ -153,8 +153,8 @@ validateForm() {
     }
   }
 
-  // Emergency phone is optional in this version, but if entered
-  // we at least enforce basic length and numeric rules.
+  // Emergency phone is optional, but if entered
+  // enforce basic length and numeric rules.
   if (this.form.emergency_phone) {
     if (!this.isReasonablePhone(this.form.emergency_phone)) {
       this.message = 'Emergency phone should be 10–15 digits (you can include + and spaces).';
@@ -309,7 +309,7 @@ isReasonablePhone(value) {
     }
   },
 
-  // Replace the placeholder template with the real form + list UI.
+  // Replace the placeholder template.
   template: `
     <div class="container py-4">
       <div class="page-box">
