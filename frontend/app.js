@@ -109,29 +109,77 @@ const app = Vue.createApp({
       };
     },
 
-    // Basic "good enough" validation for this batch.
-    // I will refine this later, but for now just check a few key required fields.
-    validateForm() {
-      if (!this.form.name) {
-        this.message = 'Name is required.';
-        return false;
-      }
-      if (!this.form.email) {
-        this.message = 'Email is required.';
-        return false;
-      }
-      if (!this.form.membership_type) {
-        this.message = 'Membership type is required.';
-        return false;
-      }
-      // Age optional, but if provided, make sure it's a number.
-      if (this.form.age && isNaN(Number(this.form.age))) {
-        this.message = 'Age must be a number.';
-        return false;
-      }
-      this.message = '';
-      return true;
-    },
+    // Slightly stricter validation for the main required fields.
+validateForm() {
+  // Trim a few key string fields so we don't accept just spaces.
+  const name = (this.form.name || '').trim();
+  const email = (this.form.email || '').trim();
+  const membership = (this.form.membership_type || '').trim();
+  const country = (this.form.country || '').trim();
+
+  if (!name) {
+    this.message = 'Full name is required.';
+    return false;
+  }
+
+  if (!email) {
+    this.message = 'Email is required.';
+    return false;
+  }
+
+  // Very simple email format check.
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    this.message = 'Please enter a valid email address.';
+    return false;
+  }
+
+  if (!membership) {
+    this.message = 'Please choose a membership type.';
+    return false;
+  }
+
+  if (!country) {
+    this.message = 'Country is required.';
+    return false;
+  }
+
+  // Age is optional, but if provided it should be a positive number.
+  if (this.form.age !== '' && this.form.age !== null) {
+    const ageNum = Number(this.form.age);
+    if (Number.isNaN(ageNum) || ageNum <= 0) {
+      this.message = 'Age must be a positive number if provided.';
+      return false;
+    }
+  }
+
+  // Emergency phone is optional in this version, but if entered
+  // we at least enforce basic length and numeric rules.
+  if (this.form.emergency_phone) {
+    if (!this.isReasonablePhone(this.form.emergency_phone)) {
+      this.message = 'Emergency phone should be 10–15 digits (you can include + and spaces).';
+      return false;
+    }
+  }
+
+  // Medical contact phone is also optional but checked if present.
+  if (this.form.medical_contact_phone) {
+    if (!this.isReasonablePhone(this.form.medical_contact_phone)) {
+      this.message = 'Medical contact phone should be 10–15 digits (you can include + and spaces).';
+      return false;
+    }
+  }
+
+  this.message = '';
+  return true;
+},
+// Allow numbers, spaces and +, but enforce 10–15 digits overall.
+// This helper is used for both emergency and medical phone fields.
+isReasonablePhone(value) {
+  const digitsOnly = value.replace(/[^0-9]/g, '');
+  const len = digitsOnly.length;
+  return len >= 10 && len <= 15;
+},
 
     // Save handler for both "create" and "update".
     saveMember() {
