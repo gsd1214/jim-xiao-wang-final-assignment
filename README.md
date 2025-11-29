@@ -1,4 +1,4 @@
-# 📘 Gym Membership Management Web Application
+# Gym Membership Management Web Application
 A web application built with Vue.js (frontend), Bootstrap (styling), Express.js (backend), and SQLite (database).
 
 ##  Overview
@@ -30,7 +30,7 @@ Jim Xiao Wang Final Assignment/
 - Vue.js dynamic rendering
 - Express.js REST API backend
 
-## 🧑‍🏫 User Stories
+## User Stories
 - As an admin, I can create new membership applications  
 - As an admin, I can view all members  
 - As an admin, I can edit existing records  
@@ -50,7 +50,7 @@ run npm start
 ### Frontend
 User can open index.html using Live Server in VS Code.
 
-## 📡 API Endpoints
+##  API Endpoints
 | Method | Endpoint | Description |
 |--------|-----------|-------------|
 | GET | /api/members | Fetch all members |
@@ -58,7 +58,7 @@ User can open index.html using Live Server in VS Code.
 | PUT | /api/members/:id | Update existing member |
 | DELETE | /api/members/:id | Delete member |
 
-## 📸 Database Screenshot
+##  Database Screenshot
 Check the Docs folder
 
 Frameworks and technologies used
@@ -73,7 +73,7 @@ Frameworks and technologies used
  
 - Framework usage → Vue + Bootstrap  
 - Source control → Multiple commits  
-- Functional URL → To be added after deployment  
+- Functional URL → GitHub repo folder link: https://github.com/gsd1214/jim-xiao-wang-final-assignment/
 - CRUD functionality → Fully implemented  
 - User experience → Purple UI, validation, polished  
 
