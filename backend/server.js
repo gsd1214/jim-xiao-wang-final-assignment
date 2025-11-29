@@ -23,33 +23,40 @@ const db = new sqlite3.Database(dbPath, (err) => {
 });
 // ---------------------------------------------
 // Create members table if it doesn't exist yet
-// This runs once automatically when the server starts.
+
 // ---------------------------------------------
 
 const createTableSql = `
   CREATE TABLE IF NOT EXISTS members (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    fullname TEXT NOT NULL,
-    dob TEXT NOT NULL,
-    address TEXT NOT NULL,
-    state TEXT NOT NULL,
-    country TEXT NOT NULL,
-    phone TEXT NOT NULL,
-    emergency_contact TEXT NOT NULL,
-    medical_contact TEXT NOT NULL,
-    allergies TEXT,
+    name TEXT,
+    sex TEXT,
+    age INTEGER,
+    dob TEXT,
+    address TEXT,
+    state TEXT,
+    country TEXT,
+    email TEXT,
+    emergency_contact TEXT,
+    emergency_phone TEXT,
+    membership_type TEXT,
     medications TEXT,
-    injuries TEXT,
-    conditions TEXT,
-    other_info TEXT
-  )
+    allergies TEXT,
+    past_injuries TEXT,
+    medical_conditions TEXT,
+    medical_contact TEXT,
+    medical_contact_phone TEXT,
+    other_info TEXT,
+    payment_type TEXT,
+    created_at TEXT DEFAULT (datetime('now'))
+  );
 `;
 
 db.run(createTableSql, (err) => {
   if (err) {
     console.error('Error creating members table:', err.message);
   } else {
-    console.log('Members table ready.');
+    console.log('Members table is ready.');
   }
 });
 // Basic middleware used by almost every small REST API.
