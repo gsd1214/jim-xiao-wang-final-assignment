@@ -210,8 +210,7 @@ app.delete('/api/members/:id', (req, res) => {
     res.json({ success: true, changes: this.changes });
   });
 });
-// In the next batch I will add the SQL to create the members table
-// and all the CRUD routes.
+
 
 // Start the HTTP server.
 app.listen(PORT, () => {
