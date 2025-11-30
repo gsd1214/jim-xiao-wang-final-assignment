@@ -74,7 +74,7 @@ Frameworks and technologies used
 - Framework usage → Vue + Bootstrap  
 - Source control → Multiple commits  
 - Functional URL → GitHub repo folder link: https://github.com/gsd1214/jim-xiao-wang-final-assignment/
-- Backend deployed URL link: https://jim-xiao-wang-final-assignment.onrender.com/api
+- Backend deployed URL link: https://jim-xiao-wang-final-assignment.onrender.com/api/members
 - CRUD functionality → Fully implemented  
 - User experience → Purple UI, validation, polished  
 
