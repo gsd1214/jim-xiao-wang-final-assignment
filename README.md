@@ -77,7 +77,7 @@ Frameworks and technologies used
 - Backend deployed URL link: https://jim-xiao-wang-final-assignment.onrender.com (this is the backend main link, use this link to start the service)
 - Backend URL for members table: https://jim-xiao-wang-final-assignment.onrender.com/api/members (this is the link to the members table)
 (Service will reboot/sleep after 15min because I am using render free tier, but it auto - trigger the service once link is clicked and everything should work.)
-- Frontend deployed URL link: lambent-gecko-9c26e1.netlify.app (Use this link to run the app, click to start the backend first.)
+- Frontend deployed URL link: https://lambent-gecko-9c26e1.netlify.app (Use this link to run the app, click to start the backend first.)
 - CRUD functionality → Fully implemented  
 - User experience → Colored UI, validation, polished styles.
 
