@@ -59,7 +59,7 @@ User can open index.html using Live Server in VS Code.
 | DELETE | /api/members/:id | Delete member |
 
 ##  Database Screenshot
-Check the Docs folder
+Check the Docs folder for DB screenshots.
 
 Frameworks and technologies used
 - Vue.js  
@@ -74,8 +74,9 @@ Frameworks and technologies used
 - Framework usage → Vue + Bootstrap  
 - Source control → Multiple commits  
 - Functional URL → GitHub repo folder link: https://github.com/gsd1214/jim-xiao-wang-final-assignment/
-- Backend deployed URL link: https://jim-xiao-wang-final-assignment.onrender.com/api/members
+- Backend deployed URL link: https://jim-xiao-wang-final-assignment.onrender.com/api/members (Service will reboot/sleep after 15min because I am using render free tier, but it auto - trigger the service once link is clicked and everything should work.)
+- Frontend deployed URL link: lambent-gecko-9c26e1.netlify.app
 - CRUD functionality → Fully implemented  
-- User experience → Purple UI, validation, polished  
+- User experience → Purple UI, validation, polished styles.
 
 
