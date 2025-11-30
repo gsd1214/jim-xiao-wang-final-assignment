@@ -74,9 +74,11 @@ Frameworks and technologies used
 - Framework usage → Vue + Bootstrap  
 - Source control → Multiple commits  
 - Functional URL → GitHub repo folder link: https://github.com/gsd1214/jim-xiao-wang-final-assignment/
-- Backend deployed URL link: https://jim-xiao-wang-final-assignment.onrender.com/api/members (Service will reboot/sleep after 15min because I am using render free tier, but it auto - trigger the service once link is clicked and everything should work.)
+- Backend deployed URL link: https://jim-xiao-wang-final-assignment.onrender.com (this is the backend main link, use this link to start the service)
+- Backend URL for members table: https://jim-xiao-wang-final-assignment.onrender.com/api/members (this is the link to the members table)
+(Service will reboot/sleep after 15min because I am using render free tier, but it auto - trigger the service once link is clicked and everything should work.)
 - Frontend deployed URL link: lambent-gecko-9c26e1.netlify.app
 - CRUD functionality → Fully implemented  
-- User experience → Purple UI, validation, polished styles.
+- User experience → Colored UI, validation, polished styles.
 
 
