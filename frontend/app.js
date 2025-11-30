@@ -2,7 +2,7 @@
 // Main Vue 3 frontend for my gym membership assignment.
 // This talks to the Express + SQLite backend via simple REST endpoints.
 
-const apiBase = 'http://localhost:3000/api'; // will change to cloud URL later if deployed
+const apiBase = 'https://jim-xiao-wang-final-assignment.onrender.com/api'; // Deployed on render.com, address updated.
 
 const app = Vue.createApp({
   data() {
